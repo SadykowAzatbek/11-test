@@ -36,6 +36,7 @@ const Products = () => {
         <Link to="/cars">Cars</Link>
         <Link to="/computers">Computers</Link>
         <Link to="/household">Household</Link>
+        <Link to="/other">Household</Link>
       </Grid>
 
       <Grid container sx={{display: 'flex', flexDirection: 'row', gap: 3, mt: '20px'}}>
