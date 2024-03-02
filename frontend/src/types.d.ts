@@ -46,3 +46,11 @@ export interface ProductTypes {
   image: string | null;
   category: string;
 }
+
+export interface ProductsItem {
+  _id: string;
+  title: string;
+  price: number;
+  image: string | null;
+  category: string;
+}

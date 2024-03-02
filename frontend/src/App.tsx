@@ -4,6 +4,7 @@ import AppToolbar from './components/UI/AppToolbar.tsx';
 import Login from './features/Users/Login.tsx';
 import Register from './features/Users/Register.tsx';
 import ProductForm from './features/Products/ProductForm.tsx';
+import Products from './features/Products/Products.tsx';
 
 function App() {
   return (
@@ -12,10 +13,12 @@ function App() {
         <AppToolbar />
       </header>
       <Routes>
-        <Route path="/" element={'main'} />
+        <Route path="/" element={<Products />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/add/product" element={<ProductForm />} />
+        <Route path="/:id" element={<Products />} />
+        <Route path="/product/:id" element={'Hiiiii!!!'} />
       </Routes>
     </>
   )

@@ -1,6 +1,6 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import axiosApi from '../../axiosApi.ts';
-import {ProductTypes} from '../../types';
+import {ProductsItem, ProductTypes} from '../../types';
 import {RootState} from '../../App/store.ts';
 
 export const addProduct = createAsyncThunk<void, ProductTypes, {state: RootState}>(
@@ -15,6 +15,19 @@ export const addProduct = createAsyncThunk<void, ProductTypes, {state: RootState
       };
 
       await axiosApi.post<ProductTypes>('/products', data, {headers});
+    } catch (err) {
+      throw err;
+    }
+  },
+);
+
+export const getProducts = createAsyncThunk<ProductsItem[]>(
+  'get/products',
+  async () => {
+    try {
+      const response = await axiosApi.get<ProductsItem[]>('/products');
+
+      return response.data;
     } catch (err) {
       throw err;
     }
