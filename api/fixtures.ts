@@ -3,7 +3,6 @@ import config from "./config";
 import {randomUUID} from "crypto";
 import User from "./models/User";
 import Products from "./models/Products";
-import user from "./models/User";
 
 const dropCollection = async (db: mongoose.Connection, collectionName: string) => {
   try {
