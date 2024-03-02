@@ -1,4 +1,4 @@
-import {Model} from "mongoose";
+import {Model, Schema} from "mongoose";
 
 export interface UserTypes {
   username: string;
@@ -16,6 +16,7 @@ interface UserMethods {
 type UserModel = Model<UserTypes, {}, UserMethods>;
 
 export interface ProductsTypes {
+  user: Schema.Types.ObjectId;
   title: string;
   description: string;
   price: number;

@@ -38,3 +38,11 @@ export interface RegisterResponse {
 export interface GlobalError {
   error: string;
 }
+
+export interface ProductTypes {
+  title: string;
+  description: string;
+  price: number;
+  image: string | null;
+  category: string;
+}
