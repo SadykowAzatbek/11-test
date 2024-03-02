@@ -35,4 +35,23 @@ productsRouter.get('/', async (_req, res, next) => {
   }
 });
 
+productsRouter.delete('/:id', auth, async (req: RequestWithUser, res, next) => {
+  try {
+    const productId = req.params.id;
+    const userId = req.user?._id;
+
+    const product = await Products.findOne({_id: productId, user: userId});
+
+    if (!product) {
+      return res.status(403).send({error: `You don't have enough rights!`});
+    }
+
+    await Products.deleteOne({_id: productId});
+
+    return res.send({message: 'Product deleted!'});
+  } catch (err) {
+    return next(err);
+  }
+});
+
 export default productsRouter;

@@ -5,6 +5,7 @@ import Login from './features/Users/Login.tsx';
 import Register from './features/Users/Register.tsx';
 import ProductForm from './features/Products/ProductForm.tsx';
 import Products from './features/Products/Products.tsx';
+import ProductData from './features/Products/ProductData.tsx';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/add/product" element={<ProductForm />} />
         <Route path="/:id" element={<Products />} />
-        <Route path="/product/:id" element={'Hiiiii!!!'} />
+        <Route path="/product/:id" element={<ProductData />} />
       </Routes>
     </>
   )

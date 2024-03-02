@@ -50,7 +50,13 @@ export interface ProductTypes {
 export interface ProductsItem {
   _id: string;
   title: string;
+  description: string;
   price: number;
   image: string | null;
   category: string;
+  user: {
+    _id: string;
+    displayName: string;
+    phone: string;
+  }
 }

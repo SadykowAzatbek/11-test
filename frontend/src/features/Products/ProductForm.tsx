@@ -109,7 +109,7 @@ const ProductForm = () => {
           </Grid>
           <FileInput label="image" name="image" onChange={fileInputChangeHandler}/>
         </Grid>
-        <Button type="submit">Create item</Button>
+        <Button type="submit" disabled={state.price <= 0}>Create item</Button>
       </Box>}
     </>
   );

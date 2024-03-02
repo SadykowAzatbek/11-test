@@ -33,3 +33,20 @@ export const getProducts = createAsyncThunk<ProductsItem[]>(
     }
   },
 );
+
+export const deleteOneProduct = createAsyncThunk<void, string, {state: RootState}>(
+  'delete/product',
+  async (id, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().users.user?.token;
+
+      const headers = {
+        'Authorization': `Bearer ${token}`,
+      };
+
+      await axiosApi.delete<ProductsItem>('/product/' + id, {headers});
+    } catch (err) {
+      throw err;
+    }
+  },
+);
